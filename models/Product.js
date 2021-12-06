@@ -10,7 +10,7 @@ const ProductSchema = new mongoose.Schema(
     color: { type: String },
     price: { type: Number, required: true },
   },
-  { timeStamp: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("Product", ProductSchema);

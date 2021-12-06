@@ -18,7 +18,7 @@ const OrderSchema = new mongoose.Schema(
     address: { type: Object, required: true },
     status: { types: String, default: "pending" },
   },
-  { timeStamp: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("Order", OrderSchema);
