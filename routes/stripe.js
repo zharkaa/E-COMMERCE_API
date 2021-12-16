@@ -1,8 +1,10 @@
 const router = require("express").Router();
-const stripe = require("stripe")(process.env.STRIPE_KEY);
+const Stripe = require("stripe")(
+  "sk_test_51K3w0MANbKePhR4B1Ax8kZZcUhg5blpUnqEcIzQSXYmSiQBOID2iPl5VtoHlEa8VGlvwNoC8XhMCv8bxHRTi1nTE00PTG5Awme"
+);
 
 router.post("/payment", (req, res) => {
-  stripe.charges.create(
+  Stripe.charges.create(
     {
       source: req.body.tokenId,
       amount: req.body.amount,
